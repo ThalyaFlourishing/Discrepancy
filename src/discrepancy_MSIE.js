@@ -2,8 +2,8 @@
 
 */
 
-const A = String.fromCodePoint(9632);
-const B = String.fromCodePoint(9633);
+const A = 'W';
+const B = '_';
 
 const startingDeck = [A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,];
 
