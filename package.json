@@ -1,0 +1,58 @@
+{
+  "name": "DISCREPANCY",
+  "version": "1.0.0",
+  "description": "A demonstration of cross-browser discrepancies when using Javascript",
+  "keywords": [
+    "key",
+    "words",
+    "here",
+  ],
+  "homepage": "https://github.com/ThalyaFlourishing/DISCREPANCY",
+  "bugs": {
+    "url": "https://github.com/ThalyaFlourishing/DISCREPANCY",
+    "email": "Yugata.B.Khidding@gmail.com"
+  },
+  "repository": "https://github.com/ThalyaFlourishing/DISCREPANCY",
+  "author": "Kurt Larson",
+  "contributors": [
+    {
+      "name": "Michelle Larson"
+    },
+    {
+      "name": "Allistair Larson"
+    },
+    {
+      "name": "Halvard Larson"
+    },
+  ],
+  "license": "MIT License",
+  "files": [
+    "angular-client",
+    "database-mongo",
+    "server"
+  ],
+  "main": "./server/index.js",
+  "bin": "",
+  "man": "./man/manual.txt",
+  "os": [
+    "win64",
+    "win32"
+  ],
+  "scripts": {
+    "server-dev": "nodemon server/index.js",
+    "db-start": "mongod --dbpath ./database-mongo/data/db"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.0",
+    "jquery": "^3.1.1",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.8.6",
+    "multer": "^1.3.0",
+    "mysql": "^2.13.0",
+    "request": "^2.81.0",
+  }
+}
