@@ -1,0 +1,37 @@
+<HTML>
+
+  <HEAD>
+    <META charset="utf-8">
+    <TITLE>APPENDING TEST</TITLE>
+  <LINK rel="stylesheet" href="DiscrepancyTest.css"></LINK>
+<!--    <SCRIPT SRC= "discrepancyTest.js"></SCRIPT> -->
+  </HEAD>
+
+  <HEADER style="font-family:OCR A"> <FONT COLOR="#FFAA00" SIZE = 20> 
+  <CENTER>APPENDING TEST</CENTER> </FONT> </HEADER>
+
+  <BODY>
+  
+  BODY
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+
+function appendElement(inputString) {
+// var para = document.createElement("p");
+var node = document.createTextNode(inputString);
+// para.appendChild(node);
+
+var element = document.getElementById("div1");
+element.appendChild(node);
+}
+
+</script>
+
+  </BODY>
+  
+</HTML>
