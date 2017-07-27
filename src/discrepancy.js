@@ -2,24 +2,28 @@
 
 */
 
-const A = String.fromCodePoint(9632);
-const B = String.fromCodePoint(9633);
+//const A = String.fromCodePoint(9632);
+//const B = String.fromCodePoint(9633);
+
+  const A = 'A';
+  const B = 'B';
 
 const startingDeck = [A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,];
 
-function displayUnshuffled() {
+var displayUnshuffled = function() {
 
   let outputString = '';
   let len = startingDeck.length;
 
   for (let i = 0; i < len; i++) {
+    appendElement(startingDeck[i]);
     outputString += (startingDeck[i]);
   }
   console.log(outputString);
 }
 
 
-function displayShuffled() {
+var displayShuffled = function() {
 
   let firstHalfRatio = 1.0;
   let secondHalfRatio = 1.0;
@@ -34,6 +38,7 @@ function displayShuffled() {
   
   for (let i = 0; i < len; i++) {
     outputString += (workingDeck[i]);
+    appendElement(workingDeck[i]);
     workingDeck[i] === A ? Acount++ : Bcount++;
     
     if(i === mid) {
@@ -45,8 +50,51 @@ function displayShuffled() {
       secondHalfRatio = Acount / Bcount; // VULNERABLE TO DIVIDING BY ZERO
     }
   }
+
+  appendElement('C')
+
   console.log('FIRST HALF RATIO = ', firstHalfRatio, '\nSECOND HALF RATIO = ', secondHalfRatio, '\n', outputString);
 }
+
+
+function appendElement(inputChar) {
+
+  var element = document.getElementById("div1");
+
+  if(inputChar === A) {
+  var blockNode = document.createElement('span');
+  blockNode.className = 'green';
+  element.appendChild(blockNode);
+  }
+  
+  if(inputChar === B) {
+  var blockNode = document.createElement('span');
+  blockNode.className = 'red';
+  element.appendChild(blockNode);
+  }
+
+  if(inputChar === 'C') {
+  var blockNode = document.createElement('p');
+  blockNode.className = 'break';
+  element.appendChild(blockNode);
+  }
+}
+
+function appendElement_OLD(inputChar) {
+  
+  var blockNode = document.createTextNode(inputChar);
+  var element = document.getElementById("div1");
+
+  if(inputChar === A) {
+  element.appendChild(blockNode);
+  }
+  
+  if(inputChar === B) {
+  element.appendChild(blockNode);
+  }
+
+}
+
 
 // IF THIS FAILS TO PRODUCE DISCREPANCY, TRY 'return a > b' INSTEAD - https://www.allenpike.com/2009/arraysort-browser-differences
 function shuffle(inputArray) {
